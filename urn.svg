@@ -1,6 +1,0 @@
-<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'>
-<defs><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' seed='4'/><feColorMatrix values='0 0 0 0 .35  0 0 0 0 .36  0 0 0 0 .37  0 0 0 .55 0'/></filter>
-<linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='#d9d6d0'/><stop offset='1' stop-color='#b9b6b0'/></linearGradient></defs>
-<rect width='800' height='600' fill='url(#g)'/><rect width='800' height='600' filter='url(#n)' opacity='.6'/>
-<path d='M330 200h140l-10 30c60 30 80 120 20 200l-30 40v60h-130v-60l-30-40c-60-80-40-170 20-200z' fill='#6b7075'/><rect x='320' y='190' width='160' height='24' rx='6' fill='#7d8287'/><rect x='300' y='520' width='200' height='30' rx='6' fill='#7d8287'/>
-<text x='400' y='580' text-anchor='middle' font-family='sans-serif' font-size='22' fill='#3d4247' opacity='.75'>ურნა</text></svg>
