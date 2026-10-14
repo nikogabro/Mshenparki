@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>კონტაქტი | მშენპარკი</title>
+  <meta name="description" content="დაგვიკავშირდით: მშენპარკი – ბეტონის დეკორატიული ნაკეთობანი. ტელეფონი, ელფოსტა, მისამართი და Facebook.">
+  <meta name="theme-color" content="#1f2328">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Georgian:wght@400..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="site.js" defer></script>
+</head>
+<body data-page="contact">
+<main>
+  <div class="page-hero"><div class="wrap"><h1>კონტაქტი</h1><p>დაგვირეკეთ ან მოგვწერეთ – სიამოვნებით გიპასუხებთ</p></div></div>
+  <section style="padding-top:60px">
+    <div class="wrap">
+      <div class="contact-grid">
+        <div class="info-list">
+          <a class="info" data-tel href="tel:"><div class="ico"><i class="fa-solid fa-phone"></i></div><div><h4>ტელეფონი</h4><span data-site="phone"></span></div></a>
+          <a class="info" data-mail href="mailto:"><div class="ico"><i class="fa-solid fa-envelope"></i></div><div><h4>ელფოსტა</h4><span data-site="email"></span></div></a>
+          <div class="info"><div class="ico"><i class="fa-solid fa-location-dot"></i></div><div><h4>მისამართი</h4><span data-site="address"></span></div></div>
+          <div class="info"><div class="ico"><i class="fa-solid fa-clock"></i></div><div><h4>სამუშაო საათები</h4><span data-site="hours"></span></div></div>
+          <a class="info" data-fb href="#" target="_blank" rel="noopener noreferrer"><div class="ico"><i class="fa-brands fa-facebook-f"></i></div><div><h4>Facebook</h4><span>მოგვწერეთ Messenger-ში</span></div></a>
+        </div>
+        <form class="form" id="contactForm">
+          <h3>მოგვწერეთ</h3>
+          <label>სახელი<input name="name" required autocomplete="name"></label>
+          <label>ტელეფონი<input name="phone" type="tel" required autocomplete="tel"></label>
+          <label>შეტყობინება<textarea name="message" required></textarea></label>
+          <button class="btn" type="submit"><i class="fa-solid fa-paper-plane"></i> გაგზავნა</button>
+        </form>
+      </div>
+      <div class="map" id="map"></div>
+    </div>
+  </section>
+</main>
+</body>
+</html>

@@ -1,0 +1,6 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'>
+<defs><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' seed='4'/><feColorMatrix values='0 0 0 0 .35  0 0 0 0 .36  0 0 0 0 .37  0 0 0 .55 0'/></filter>
+<linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='#d9d6d0'/><stop offset='1' stop-color='#b9b6b0'/></linearGradient></defs>
+<rect width='800' height='600' fill='url(#g)'/><rect width='800' height='600' filter='url(#n)' opacity='.6'/>
+<path d='M300 330h200l-25 200H325z' fill='#6b7075'/><rect x='285' y='310' width='230' height='30' rx='6' fill='#7b8085'/><path d='M400 310c-40-80-10-130 0-150 10 20 40 70 0 150z' fill='#5d7a4f'/>
+<text x='400' y='580' text-anchor='middle' font-family='sans-serif' font-size='22' fill='#3d4247' opacity='.75'>ქოთანი</text></svg>

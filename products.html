@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>პროდუქცია | მშენპარკი</title>
+  <meta name="description" content="ბეტონის დეკორატიული ნაკეთობანი: ქოთნები, ურნები, სკამები, ღობის პანელები, მოაჯირი, ქვაფენილი, ბორდიური და კედლის პანელები.">
+  <meta name="theme-color" content="#1f2328">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Georgian:wght@400..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="site.js" defer></script>
+</head>
+<body data-page="products">
+<main>
+  <div class="page-hero"><div class="wrap"><h1>პროდუქცია</h1><p>ბეტონის დეკორატიული ნაკეთობანი ეზოსა და ფასადისთვის</p></div></div>
+  <section style="padding-top:50px">
+    <div class="wrap">
+      <div class="toolbar">
+        <label class="search"><i class="fa-solid fa-magnifying-glass"></i><input id="search" type="search" placeholder="ძიება პროდუქციაში..." aria-label="ძიება"></label>
+        <div class="chips" id="chips" role="group" aria-label="კატეგორიები"></div>
+      </div>
+      <div class="count" id="count"></div>
+      <div class="grid" id="productsGrid"></div>
+      <div class="empty" id="empty" hidden><i class="fa-solid fa-magnifying-glass" style="font-size:3rem;margin-bottom:14px"></i><h3>პროდუქტი ვერ მოიძებნა</h3><p>სცადეთ სხვა საძიებო სიტყვა.</p></div>
+    </div>
+  </section>
+
+  <div class="modal" id="modal" hidden role="dialog" aria-modal="true">
+    <div class="modal-box">
+      <button class="x" data-close aria-label="დახურვა">&times;</button>
+      <img id="mImg" src="" alt="">
+      <div class="modal-info">
+        <span class="eyebrow" id="mCat"></span>
+        <h3 id="mTitle"></h3>
+        <p id="mDesc"></p>
+        <a class="btn" id="mLink" href="contact.html"><i class="fa-solid fa-phone"></i> შეკვეთა</a>
+      </div>
+    </div>
+  </div>
+</main>
+</body>
+</html>
