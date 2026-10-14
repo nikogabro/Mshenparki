@@ -1,6 +1,0 @@
-<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'>
-<defs><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' seed='4'/><feColorMatrix values='0 0 0 0 .35  0 0 0 0 .36  0 0 0 0 .37  0 0 0 .55 0'/></filter>
-<linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='#d9d6d0'/><stop offset='1' stop-color='#b9b6b0'/></linearGradient></defs>
-<rect width='800' height='600' fill='url(#g)'/><rect width='800' height='600' filter='url(#n)' opacity='.6'/>
-<g fill='#7d8287'><rect x='230' y='250' width='340' height='30' rx='5'/><rect x='230' y='510' width='340' height='30' rx='5'/></g><g fill='#6b7075'><path d='M290 280h40l-8 30c14 30 14 50 0 80l8 30 4 90h-48l4-90 8-30c-14-30-14-50 0-80z'/><path d='M390 280h40l-8 30c14 30 14 50 0 80l8 30 4 90h-48l4-90 8-30c-14-30-14-50 0-80z'/><path d='M490 280h40l-8 30c14 30 14 50 0 80l8 30 4 90h-48l4-90 8-30c-14-30-14-50 0-80z'/></g>
-<text x='400' y='580' text-anchor='middle' font-family='sans-serif' font-size='22' fill='#3d4247' opacity='.75'>მოაჯირი</text></svg>
