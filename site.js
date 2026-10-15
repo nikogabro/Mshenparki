@@ -5,12 +5,15 @@
 const SITE = {
   name: "მშენპარკი",
   tagline: "ბეტონის დეკორატიული ნაკეთობანი",
+  url: "https://mshenparki.vercel.app", // no trailing slash; change if you get a custom domain
+  ogImage: "images/og-cover.jpg", // 1200x630 JPG photo, used for Facebook/Google previews
   phone: "+995 5XX XX XX XX", // TODO: real phone (display)
   phoneHref: "+9955XXXXXXXX", // TODO: real phone (digits only, with +995)
   email: "info@example.ge", // TODO
   address: "მისამართი დაზუსტდება", // TODO: street + city
+  city: "", // TODO: city name, used for SEO (e.g. "ქუთაისი")
   hours: "ორშაბათი – შაბათი, 10:00 – 18:00", // TODO
-  facebook: "https://www.facebook.com/", // TODO: company Facebook page URL
+  facebook: "https://www.facebook.com/p/Mshenparki-%E1%83%91%E1%83%94%E1%83%A2%E1%83%9D%E1%83%9C%E1%83%98%E1%83%A1-%E1%83%93%E1%83%94%E1%83%99%E1%83%9D%E1%83%A0%E1%83%90%E1%83%A2%E1%83%98%E1%83%A3%E1%83%9A%E1%83%98-%E1%83%9C%E1%83%90%E1%83%99%E1%83%94%E1%83%97%E1%83%9D%E1%83%91%E1%83%90%E1%83%9C%E1%83%98-61594973662312/",
   instagram: "", // optional – leave empty to hide
   mapEmbed: "", // optional – Google Maps "Embed a map" iframe src URL
   founded: "", // optional, e.g. "2018"
@@ -46,7 +49,7 @@ const NAV = [
 function renderChrome() {
   const page = document.body.dataset.page;
   const links = NAV.map(([href, key, label]) =>
-    `<a href="${href}" class="${key === page ? "active" : ""}">${label}</a>`).join("");
+    `<a href="${href}" class="${key === page ? "active" : ""}"${key === page ? ' aria-current="page"' : ""}>${label}</a>`).join("");
 
   document.body.insertAdjacentHTML("afterbegin", `
     <header class="site-header">
@@ -109,12 +112,81 @@ function renderChrome() {
   });
 }
 
+/* ---------- SEO: structured data (JSON-LD) ----------
+   Placeholder values (TODO phone/email/address) are skipped automatically,
+   so fake data never reaches Google. Fill in SITE above and it appears. */
+function initSEO() {
+  const page = document.body.dataset.page;
+  const real = (v) => v && !/X|example|დაზუსტდება/.test(v);
+  const abs = (p) => `${SITE.url}/${p}`;
+  const data = [];
+
+  if (page === "home") {
+    const biz = {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      name: SITE.name,
+      description: `${SITE.tagline}: ქოთნები, ურნები, ღობის პანელები, მოაჯირი, ქვაფენილი და ბორდიური ეზოსა და ფასადისთვის.`,
+      url: `${SITE.url}/`,
+      image: abs(SITE.ogImage),
+      sameAs: [SITE.facebook, SITE.instagram].filter(Boolean),
+    };
+    if (real(SITE.phoneHref)) biz.telephone = SITE.phoneHref;
+    if (real(SITE.email)) biz.email = SITE.email;
+    if (real(SITE.address)) {
+      biz.address = { "@type": "PostalAddress", streetAddress: SITE.address, addressCountry: "GE" };
+      if (SITE.city) biz.address.addressLocality = SITE.city;
+    }
+    if (SITE.founded) biz.foundingDate = SITE.founded;
+    data.push(biz);
+  } else {
+    const item = NAV.find(([, key]) => key === page);
+    if (item) {
+      data.push({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: NAV[0][2], item: `${SITE.url}/` },
+          { "@type": "ListItem", position: 2, name: item[2], item: abs(item[0]) },
+        ],
+      });
+    }
+  }
+
+  if (page === "products") {
+    data.push({
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      name: `${SITE.name} – პროდუქცია`,
+      itemListElement: PRODUCTS.map((p, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        item: {
+          "@type": "Product",
+          name: p.name,
+          description: p.desc,
+          image: abs(p.img),
+          category: CATEGORIES[p.cat],
+          brand: { "@type": "Brand", name: SITE.name },
+        },
+      })),
+    });
+  }
+
+  data.forEach((obj) => {
+    const s = document.createElement("script");
+    s.type = "application/ld+json";
+    s.textContent = JSON.stringify(obj);
+    document.head.appendChild(s);
+  });
+}
+
 /* ---------- product card ---------- */
 function cardHTML(p) {
   return `
   <article class="card" data-id="${p.id}" data-cat="${p.cat}" data-name="${p.name}">
     <button class="card-img" data-open="${p.id}" aria-label="${p.name} – ნახვა">
-      <img src="${p.img}" alt="${p.name}" loading="lazy">
+      <img src="${p.img}" alt="${p.name} – ${CATEGORIES[p.cat]}" width="400" height="300" loading="lazy">
       <span class="tag">${CATEGORIES[p.cat]}</span>
     </button>
     <div class="card-body">
@@ -212,6 +284,7 @@ function initReveal() {
 
 document.addEventListener("DOMContentLoaded", () => {
   renderChrome();
+  initSEO();
   initHome();
   initProducts();
   initContact();

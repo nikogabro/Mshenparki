@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mshenparki.vercel.app/sitemap.xml
