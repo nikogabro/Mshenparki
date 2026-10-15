@@ -4,7 +4,7 @@
    ========================================================== */
 const SITE = {
   name: "მშენპარკი",
-  tagline: "ბეტონის დეკორატიული ნაკეთობანი",
+  tagline: "ბეტონის დეკორატიული ნაკეთობები",
   url: "https://mshenparki.vercel.app", // no trailing slash; change if you get a custom domain
   ogImage: "images/og-cover.jpg", // 1200x630 JPG photo, used for Facebook/Google previews
   phone: "+995 595 53 36 73", // display
@@ -34,8 +34,8 @@ const PRODUCTS = [
   { id: "fence", cat: "fence", name: "ღობის პანელები", img: "images/fence.svg", desc: "დეკორატიული ღობის სექციები და ბოძები სხვადასხვა ფაქტურით." },
   { id: "baluster", cat: "fence", name: "მოაჯირი", img: "images/baluster.svg", desc: "ბეტონის კოლონები და მოაჯირები კიბეებისა და ტერასებისთვის." },
   { id: "block", cat: "fence", name: "დეკორატიული ბლოკი", img: "images/block.svg", desc: "ორნამენტული ბლოკები ღობეებისა და ფასადებისთვის." },
-  { id: "tile", cat: "paving", name: "ქვაფენილი", img: "images/tile.svg", desc: "ეზოსა და ტროტუარის დეკორატიული ფილები." },
-  { id: "curb", cat: "paving", name: "ბორდიური", img: "images/curb.svg", desc: "საბორდიურე ქვები ბილიკებისა და საგზაო ზოლებისთვის." },
+  { id: "tile", cat: "paving", name: "ქვაფენილი", img: "images/tile.svg", desc: "ეზოსა და ტროტუარისთვის განკუთვნილი დეკორატიული ფილები." },
+  { id: "curb", cat: "paving", name: "ბორდიური", img: "images/curb.svg", desc: "საბორდიურე ქვები ბილიკებისა და გზის ზოლებისთვის." },
   { id: "panel", cat: "paving", name: "კედლის პანელები", img: "images/panel.svg", desc: "ქვის იმიტაციის ბეტონის პანელები ფასადის მოსაპირკეთებლად." },
 ];
 
@@ -259,7 +259,7 @@ function initContact() {
   if (!note) return;
   const product = new URLSearchParams(location.search).get("product");
   if (product) {
-    note.textContent = `გაინტერესებთ: ${product}. დაგვირეკეთ ან მოგვწერეთ Facebook-ზე და გიპასუხებთ.`;
+    note.textContent = `თქვენ გაინტერესებთ: ${product}. დაგვირეკეთ ან მოგვწერეთ Facebook-ზე და გიპასუხებთ.`;
     note.hidden = false;
   }
   if (SITE.mapEmbed) {
