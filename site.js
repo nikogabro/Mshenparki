@@ -12,10 +12,11 @@ const SITE = {
   address: "ქუთაისი, სულხან-საბას #8", // shown on the site
   street: "სულხან-საბას #8", // street only, used for Google structured data
   city: "ქუთაისი",
+  mapsLink: "https://www.google.com/maps/search/?api=1&query=42.2474778,42.6655794", // opens Google Maps (app on phones)
   hours: "ორშაბათი – შაბათი, 10:00 – 18:00", // TODO
   facebook: "https://www.facebook.com/p/Mshenparki-%E1%83%91%E1%83%94%E1%83%A2%E1%83%9D%E1%83%9C%E1%83%98%E1%83%A1-%E1%83%93%E1%83%94%E1%83%99%E1%83%9D%E1%83%A0%E1%83%90%E1%83%A2%E1%83%98%E1%83%A3%E1%83%9A%E1%83%98-%E1%83%9C%E1%83%90%E1%83%99%E1%83%94%E1%83%97%E1%83%9D%E1%83%91%E1%83%90%E1%83%9C%E1%83%98-61594973662312/",
   instagram: "", // optional – leave empty to hide
-  mapEmbed: "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1738.7355766404962!2d42.66867276499466!3d42.247262669150366!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1ska!2sge!4v1792091143834!5m2!1ska!2sge", // Google Maps embed src
+  mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2807.31949592681!2d42.66557937592496!3d42.247477771203535!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x405cf39ccd3ff287%3A0x21be64933b7b8598!2zTXNoZW5wYXJraSAtIOGDkeGDlOGDouGDneGDnOGDmOGDoSDhg5Phg5Thg5nhg53hg6Dhg5Dhg6Lhg5jhg6Phg5rhg5gg4YOc4YOQ4YOZ4YOU4YOX4YOd4YOR4YOQ4YOc4YOY!5e1!3m2!1ska!2sge!4v1792091716881!5m2!1ska!2sge", // Google Maps embed src
   founded: "", // optional, e.g. "2018"
 };
 
@@ -84,7 +85,7 @@ function renderChrome() {
         <div>
           <h4>კონტაქტი</h4>
           <p><i class="fa-solid fa-phone"></i> <a href="tel:${SITE.phoneHref}">${SITE.phone}</a></p>
-          <p><i class="fa-solid fa-location-dot"></i> ${SITE.address}</p>
+          <p><i class="fa-solid fa-location-dot"></i> <a href="${SITE.mapsLink}" target="_blank" rel="noopener noreferrer">${SITE.address}</a></p>
         </div>
       </div>
       <div class="copy">© ${new Date().getFullYear()} ${SITE.name}. ყველა უფლება დაცულია.</div>
@@ -105,6 +106,7 @@ function renderChrome() {
     if (v) el.textContent = v;
   });
   document.querySelectorAll("[data-tel]").forEach((el) => (el.href = "tel:" + SITE.phoneHref));
+  document.querySelectorAll("[data-map]").forEach((el) => (el.href = SITE.mapsLink));
   document.querySelectorAll("[data-fb]").forEach((el) => {
     if (SITE.facebook) el.href = SITE.facebook; else el.remove();
   });
@@ -130,6 +132,7 @@ function initSEO() {
       sameAs: [SITE.facebook, SITE.instagram].filter(Boolean),
     };
     if (real(SITE.phoneHref)) biz.telephone = SITE.phoneHref;
+    biz.hasMap = SITE.mapsLink;
     if (SITE.street) {
       biz.address = { "@type": "PostalAddress", streetAddress: SITE.street, addressCountry: "GE" };
       if (SITE.city) biz.address.addressLocality = SITE.city;
