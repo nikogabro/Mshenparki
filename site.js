@@ -12,7 +12,7 @@ const SITE = {
   address: "ქუთაისი, სულხან-საბას #8", // shown on the site
   street: "სულხან-საბას #8", // street only, used for Google structured data
   city: "ქუთაისი",
-  mapsLink: "https://www.google.com/maps/search/?api=1&query=42.2474778,42.6655794", // opens Google Maps (app on phones)
+  mapsLink: "https://maps.app.goo.gl/Hobdk3vgTHUfjnFu5", // opens Google Maps (app on phones)
   hours: "ორშაბათი – შაბათი, 10:00 – 18:00", // TODO
   facebook: "https://www.facebook.com/p/Mshenparki-%E1%83%91%E1%83%94%E1%83%A2%E1%83%9D%E1%83%9C%E1%83%98%E1%83%A1-%E1%83%93%E1%83%94%E1%83%99%E1%83%9D%E1%83%A0%E1%83%90%E1%83%A2%E1%83%98%E1%83%A3%E1%83%9A%E1%83%98-%E1%83%9C%E1%83%90%E1%83%99%E1%83%94%E1%83%97%E1%83%9D%E1%83%91%E1%83%90%E1%83%9C%E1%83%98-61594973662312/",
   instagram: "", // optional – leave empty to hide
