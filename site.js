@@ -7,15 +7,15 @@ const SITE = {
   tagline: "ბეტონის დეკორატიული ნაკეთობანი",
   url: "https://mshenparki.vercel.app", // no trailing slash; change if you get a custom domain
   ogImage: "images/og-cover.jpg", // 1200x630 JPG photo, used for Facebook/Google previews
-  phone: "+995 5XX XX XX XX", // TODO: real phone (display)
-  phoneHref: "+9955XXXXXXXX", // TODO: real phone (digits only, with +995)
-  email: "info@example.ge", // TODO
-  address: "მისამართი დაზუსტდება", // TODO: street + city
-  city: "", // TODO: city name, used for SEO (e.g. "ქუთაისი")
+  phone: "+995 595 53 36 73", // display
+  phoneHref: "+995595533673", // used for tel: links (tap to call)
+  address: "ქუთაისი, სულხან-საბას #8", // shown on the site
+  street: "სულხან-საბას #8", // street only, used for Google structured data
+  city: "ქუთაისი",
   hours: "ორშაბათი – შაბათი, 10:00 – 18:00", // TODO
   facebook: "https://www.facebook.com/p/Mshenparki-%E1%83%91%E1%83%94%E1%83%A2%E1%83%9D%E1%83%9C%E1%83%98%E1%83%A1-%E1%83%93%E1%83%94%E1%83%99%E1%83%9D%E1%83%A0%E1%83%90%E1%83%A2%E1%83%98%E1%83%A3%E1%83%9A%E1%83%98-%E1%83%9C%E1%83%90%E1%83%99%E1%83%94%E1%83%97%E1%83%9D%E1%83%91%E1%83%90%E1%83%9C%E1%83%98-61594973662312/",
   instagram: "", // optional – leave empty to hide
-  mapEmbed: "", // optional – Google Maps "Embed a map" iframe src URL
+  mapEmbed: "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1738.7355766404962!2d42.66867276499466!3d42.247262669150366!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1ska!2sge!4v1792091143834!5m2!1ska!2sge", // Google Maps embed src
   founded: "", // optional, e.g. "2018"
 };
 
@@ -84,7 +84,6 @@ function renderChrome() {
         <div>
           <h4>კონტაქტი</h4>
           <p><i class="fa-solid fa-phone"></i> <a href="tel:${SITE.phoneHref}">${SITE.phone}</a></p>
-          <p><i class="fa-solid fa-envelope"></i> <a href="mailto:${SITE.email}">${SITE.email}</a></p>
           <p><i class="fa-solid fa-location-dot"></i> ${SITE.address}</p>
         </div>
       </div>
@@ -106,18 +105,17 @@ function renderChrome() {
     if (v) el.textContent = v;
   });
   document.querySelectorAll("[data-tel]").forEach((el) => (el.href = "tel:" + SITE.phoneHref));
-  document.querySelectorAll("[data-mail]").forEach((el) => (el.href = "mailto:" + SITE.email));
   document.querySelectorAll("[data-fb]").forEach((el) => {
     if (SITE.facebook) el.href = SITE.facebook; else el.remove();
   });
 }
 
 /* ---------- SEO: structured data (JSON-LD) ----------
-   Placeholder values (TODO phone/email/address) are skipped automatically,
+   Placeholder values (anything containing X) are skipped automatically,
    so fake data never reaches Google. Fill in SITE above and it appears. */
 function initSEO() {
   const page = document.body.dataset.page;
-  const real = (v) => v && !/X|example|დაზუსტდება/.test(v);
+  const real = (v) => v && !/X/.test(v);
   const abs = (p) => `${SITE.url}/${p}`;
   const data = [];
 
@@ -132,9 +130,8 @@ function initSEO() {
       sameAs: [SITE.facebook, SITE.instagram].filter(Boolean),
     };
     if (real(SITE.phoneHref)) biz.telephone = SITE.phoneHref;
-    if (real(SITE.email)) biz.email = SITE.email;
-    if (real(SITE.address)) {
-      biz.address = { "@type": "PostalAddress", streetAddress: SITE.address, addressCountry: "GE" };
+    if (SITE.street) {
+      biz.address = { "@type": "PostalAddress", streetAddress: SITE.street, addressCountry: "GE" };
       if (SITE.city) biz.address.addressLocality = SITE.city;
     }
     if (SITE.founded) biz.foundingDate = SITE.founded;
@@ -253,23 +250,19 @@ function initProducts() {
   document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !modal.hidden) close(); });
 }
 
-/* ---------- contact form ---------- */
+/* ---------- contact page: map + product note ---------- */
 function initContact() {
-  const form = document.getElementById("contactForm");
-  if (!form) return;
+  const note = document.getElementById("productNote");
+  if (!note) return;
   const product = new URLSearchParams(location.search).get("product");
-  if (product) form.message.value = `გამარჯობა, მაინტერესებს: ${product}\n`;
+  if (product) {
+    note.textContent = `გაინტერესებთ: ${product}. დაგვირეკეთ ან მოგვწერეთ Facebook-ზე და გიპასუხებთ.`;
+    note.hidden = false;
+  }
   if (SITE.mapEmbed) {
     const m = document.getElementById("map");
-    m.innerHTML = `<iframe src="${SITE.mapEmbed}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="რუკა"></iframe>`;
+    m.innerHTML = `<iframe src="${SITE.mapEmbed}" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="მშენპარკის მდებარეობა რუკაზე – ${SITE.address}"></iframe>`;
   }
-  // No backend: opens the visitor's mail app with the message prefilled.
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const subject = encodeURIComponent("შეკვეთა / შეკითხვა – " + SITE.name);
-    const body = encodeURIComponent(`${form.message.value}\n\nსახელი: ${form.name.value}\nტელეფონი: ${form.phone.value}`);
-    location.href = `mailto:${SITE.email}?subject=${subject}&body=${body}`;
-  });
 }
 
 /* ---------- scroll reveal ---------- */
