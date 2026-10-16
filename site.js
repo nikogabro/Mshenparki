@@ -6,6 +6,7 @@ const SITE = {
   name: "მშენპარკი",
   tagline: "ბეტონის დეკორატიული ნაკეთობები",
   url: "https://mshenparki.vercel.app", // no trailing slash; change if you get a custom domain
+  logo: "images/logo-192.webp", // round logo shown top-left in the header
   ogImage: "images/og-cover.jpg", // 1200x630 JPG photo, used for Facebook/Google previews
   phone: "+995 595 53 36 73", // display
   phoneHref: "+995595533673", // used for tel: links (tap to call)
@@ -56,7 +57,7 @@ function renderChrome() {
     <header class="site-header">
       <div class="wrap bar">
         <a class="brand" href="index.html" aria-label="${SITE.name}">
-          <img src="images/favicon.svg" alt="" width="40" height="40">
+          <img src="${SITE.logo}" alt="" width="52" height="52">
           <span>${SITE.name}</span>
         </a>
         <nav class="nav" aria-label="მთავარი ნავიგაცია">${links}</nav>

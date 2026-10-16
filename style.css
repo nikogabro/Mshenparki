@@ -23,7 +23,8 @@ button { font-family: inherit; cursor: pointer; }
 /* header */
 .site-header { position: sticky; top: 0; z-index: 50; background: rgba(31, 35, 40, 0.96); backdrop-filter: blur(10px); color: #fff; }
 .bar { display: flex; align-items: center; justify-content: space-between; height: 72px; }
-.brand { display: flex; align-items: center; gap: 12px; font-weight: 800; font-size: 1.25rem; letter-spacing: .3px; }
+.brand { display: flex; align-items: center; gap: 12px; font-weight: 800; font-size: 1.25rem; letter-spacing: .3px; flex-shrink: 0; }
+.brand img { width: 52px; height: 52px; border-radius: 50%; object-fit: cover; }
 .nav { display: flex; gap: 6px; }
 .nav a { padding: 10px 16px; border-radius: 999px; font-weight: 500; font-size: .95rem; transition: .25s; }
 .nav a:hover, .nav a.active { background: rgba(255,255,255,.1); color: #f0b36e; }
