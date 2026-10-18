@@ -1,0 +1,40 @@
+# მშენპარკი (Mshenparki)
+
+> მშენპარკი არის ქუთაისში (საქართველო), სულხან-საბას #8-ზე მოქმედი ბეტონის დეკორატიული ნაკეთობების მწარმოებელი. უკვე 20 წელია ვამზადებთ ქოთნებს, ურნებს, ბაღის სკამებს, ღობის პანელებს, მოაჯირს, დეკორატიულ ბლოკს, ქვაფენილს, ბორდიურს და კედლის პანელებს ეზოების, ბაღებისა და ფასადებისთვის.
+>
+> English: Mshenparki is a maker of decorative concrete products in Kutaisi, Georgia (Sulkhan-Saba St. 8). It produces garden pots, urns, garden benches, fence panels, balustrades, decorative blocks, paving tiles, curbstones and wall cladding panels, and can make items to a customer's size and design on request. The company states it has 20 years of experience.
+
+## Key facts
+- Name / დასახელება: მშენპარკი (Mshenparki)
+- Business type / საქმიანობა: decorative concrete products manufacturer / ბეტონის დეკორატიული ნაკეთობების დამზადება
+- Address / მისამართი: ქუთაისი, სულხან-საბას #8 (Kutaisi, Georgia)
+- Phone / ტელეფონი: +995 595 53 36 73
+- Facebook: https://www.facebook.com/p/Mshenparki-%E1%83%91%E1%83%94%E1%83%A2%E1%83%9D%E1%83%9C%E1%83%98%E1%83%A1-%E1%83%93%E1%83%94%E1%83%99%E1%83%9D%E1%83%A0%E1%83%90%E1%83%A2%E1%83%98%E1%83%A3%E1%83%9A%E1%83%98-%E1%83%9C%E1%83%90%E1%83%99%E1%83%94%E1%83%97%E1%83%9D%E1%83%91%E1%83%90%E1%83%9C%E1%83%98-61594973662312/
+- Google Maps: https://maps.app.goo.gl/Hobdk3vgTHUfjnFu5
+- Website language: Georgian (ka)
+- Experience / გამოცდილება: 20 years (stated by the company)
+- Custom orders / ინდივიდუალური შეკვეთა: yes – custom size and design on request
+- Prices / ფასები: not published online; ask by phone
+- Opening hours: not published online yet
+
+## Pages
+- [Home / მთავარი](https://mshenparki.vercel.app/): company summary, key facts, featured products and FAQ
+- [Products / პროდუქცია](https://mshenparki.vercel.app/products.html): full catalog of 9 decorative concrete products in 3 categories
+- [About / ჩვენ შესახებ](https://mshenparki.vercel.app/aboutus.html): company story and strengths
+- [Contact / კონტაქტი](https://mshenparki.vercel.app/contact.html): phone, address, map, Facebook
+
+## Products (catalog)
+- ყვავილის ქოთნები: სხვადასხვა ზომის დეკორატიული ბეტონის ქოთნები ეზოსა და ტერასისთვის.
+- ურნები: კლასიკური ფორმის ურნები შესასვლელისა და ბაღის გასალამაზებლად.
+- ბაღის სკამები: გამძლე ბეტონის სკამები პარკებისა და ეზოებისთვის.
+- ღობის პანელები: დეკორატიული ღობის სექციები და ბოძები სხვადასხვა ფაქტურით.
+- მოაჯირი: ბეტონის კოლონები და მოაჯირები კიბეებისა და ტერასებისთვის.
+- დეკორატიული ბლოკი: ორნამენტული ბლოკები ღობეებისა და ფასადებისთვის.
+- ქვაფენილი: ეზოსა და ტროტუარისთვის განკუთვნილი დეკორატიული ფილები.
+- ბორდიური: საბორდიურე ქვები ბილიკებისა და გზის ზოლებისთვის.
+- კედლის პანელები: ქვის იმიტაციის ბეტონის პანელები ფასადის მოსაპირკეთებლად.
+
+## Categories
+- ბაღი და ეზო (garden and yard): pots, urns, benches
+- ღობე და მოაჯირი (fences and railings): fence panels, balustrades, decorative blocks
+- მოპირკეთება (paving and cladding): paving tiles, curbstones, wall panels
