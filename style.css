@@ -118,7 +118,14 @@ section { padding: 90px 0; }
 /* modal */
 .modal { position: fixed; inset: 0; z-index: 100; background: rgba(0,0,0,.75); display: grid; place-items: center; padding: 20px; }
 .modal-box { position: relative; background: #fff; border-radius: 22px; max-width: 900px; width: 100%; display: grid; grid-template-columns: 1fr 1fr; overflow: hidden; animation: pop .3s ease; }
-.modal-box img { width: 100%; height: 100%; min-height: 320px; object-fit: cover; }
+.modal-media { display: flex; flex-direction: column; background: var(--mist); min-height: 320px; }
+.modal-media #mImg { width: 100%; flex: 1; min-height: 320px; object-fit: cover; display: block; }
+.thumbs { display: flex; gap: 8px; padding: 8px; background: #fff; }
+.thumbs button { border: 2px solid transparent; padding: 0; width: 64px; height: 64px; border-radius: 10px; overflow: hidden; cursor: pointer; background: var(--mist); opacity: .7; }
+.thumbs button.active { border-color: #f0b36e; opacity: 1; }
+.thumbs img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.card-body .more { display: none; }
+.modal-info .modal-more { font-size: .95rem; }
 .modal-info { padding: 40px 32px; display: flex; flex-direction: column; gap: 10px; justify-content: center; }
 .modal-info .eyebrow { margin: 0; }
 .modal-info h3 { font-size: 1.8rem; }
@@ -126,7 +133,7 @@ section { padding: 90px 0; }
 .modal-info .btn { align-self: flex-start; margin-top: 12px; }
 .x { position: absolute; top: 14px; right: 14px; width: 40px; height: 40px; border-radius: 50%; border: 0; background: #fff; box-shadow: 0 6px 18px rgba(0,0,0,.2); font-size: 1.4rem; }
 @keyframes pop { from { opacity: 0; transform: scale(.94) translateY(20px); } }
-@media (max-width: 720px) { .modal-box { grid-template-columns: 1fr; } .modal-box img { min-height: 220px; max-height: 260px; } }
+@media (max-width: 720px) { .modal-box { grid-template-columns: 1fr; } .modal-media #mImg { min-height: 220px; max-height: 300px; } }
 
 /* contact */
 .contact-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 40px; }

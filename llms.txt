@@ -19,7 +19,7 @@
 
 ## Pages
 - [Home / მთავარი](https://mshenparki.vercel.app/): company summary, key facts, featured products and FAQ
-- [Products / პროდუქცია](https://mshenparki.vercel.app/products.html): full catalog of 9 decorative concrete products in 3 categories
+- [Products / პროდუქცია](https://mshenparki.vercel.app/products.html): full catalog of 10 decorative concrete products in 3 categories
 - [About / ჩვენ შესახებ](https://mshenparki.vercel.app/aboutus.html): company story and strengths
 - [Contact / კონტაქტი](https://mshenparki.vercel.app/contact.html): phone, address, map, Facebook
 
@@ -28,13 +28,14 @@
 - ურნები: კლასიკური ფორმის ურნები შესასვლელისა და ბაღის გასალამაზებლად.
 - ბაღის სკამები: გამძლე ბეტონის სკამები პარკებისა და ეზოებისთვის.
 - ღობის პანელები: დეკორატიული ღობის სექციები და ბოძები სხვადასხვა ფაქტურით.
-- მოაჯირი: ბეტონის კოლონები და მოაჯირები კიბეებისა და ტერასებისთვის.
+- მოაჯირი: ღია ფერის ბეტონის ბალუსტრები ქვის წვრილი ჩანართებით – კიბეების, ტერასებისა და აივნის მოაჯირისთვის. მზადდება ორი სახის: კვადრატული თავ-ძირით და მრგვალი ძირით, გლუვი ზედაპირით. ქვის წვრილი ჩანართები ბეტონს ბუნებრივი ქვის იერს აძლევს. ზომა, ფორმა და რაოდენობა შეგიძლიათ შეგვიკვეთოთ ინდივიდუალურად. დეტალებისა და ფასისთვის დაგვირეკეთ: +995 595 53 36 73.
 - დეკორატიული ბლოკი: ორნამენტული ბლოკები ღობეებისა და ფასადებისთვის.
 - ქვაფენილი: ეზოსა და ტროტუარისთვის განკუთვნილი დეკორატიული ფილები.
+- გაზონის ფილები: ბეტონის ფილები კვადრატული ხვრელებით, რომლებშიც ბალახი ამოდის – ავტოსადგომისა და ეზოს მოსაპირკეთებლად. ფილები გვერდიგვერდ ეწყობა და ქმნის მყარ საფარს, რომლის ხვრელებშიც ბალახი ამოდის: ეზო მწვანე რჩება, წვიმის წყალი კი გრუნტში გადის. გამოიყენება ავტოსადგომების, ეზოს შესასვლელებისა და ბილიკების მოსაპირკეთებლად. დეტალებისა და ფასისთვის დაგვირეკეთ: +995 595 53 36 73.
 - ბორდიური: საბორდიურე ქვები ბილიკებისა და გზის ზოლებისთვის.
 - კედლის პანელები: ქვის იმიტაციის ბეტონის პანელები ფასადის მოსაპირკეთებლად.
 
 ## Categories
 - ბაღი და ეზო (garden and yard): pots, urns, benches
 - ღობე და მოაჯირი (fences and railings): fence panels, balustrades, decorative blocks
-- მოპირკეთება (paving and cladding): paving tiles, curbstones, wall panels
+- მოპირკეთება (paving and cladding): paving tiles, grass pavers, curbstones, wall panels

@@ -63,11 +63,34 @@ function initProducts() {
     const c = b.closest(".card");
     const img = c.querySelector("img");
     const title = c.querySelector("h3").textContent;
-    document.getElementById("mImg").src = img.getAttribute("src");
-    document.getElementById("mImg").alt = img.alt;
+    const shots = c.dataset.images ? c.dataset.images.split("|") : [img.getAttribute("src")];
+    const mImg = document.getElementById("mImg");
+    const thumbs = document.getElementById("mThumbs");
+    const show = (i) => {
+      mImg.src = shots[i];
+      mImg.alt = img.alt + (shots.length > 1 ? " – ფოტო " + (i + 1) : "");
+      thumbs.querySelectorAll("button").forEach((t, k) => t.classList.toggle("active", k === i));
+    };
+    thumbs.innerHTML = "";
+    shots.forEach((src, i) => {
+      const t = document.createElement("button");
+      t.type = "button";
+      t.setAttribute("aria-label", "ფოტო " + (i + 1));
+      const ti = document.createElement("img");
+      ti.src = src; ti.alt = ""; ti.loading = "lazy";
+      t.appendChild(ti);
+      t.addEventListener("click", () => show(i));
+      thumbs.appendChild(t);
+    });
+    thumbs.hidden = shots.length < 2;
+    show(0);
     document.getElementById("mCat").textContent = c.querySelector(".tag").textContent;
     document.getElementById("mTitle").textContent = title;
     document.getElementById("mDesc").textContent = c.querySelector("p").textContent;
+    const more = c.querySelector(".more");
+    const mMore = document.getElementById("mMore");
+    mMore.textContent = more ? more.textContent : "";
+    mMore.hidden = !more;
     document.getElementById("mLink").href = "contact.html?product=" + encodeURIComponent(title);
     modal.hidden = false; document.body.style.overflow = "hidden";
   });
